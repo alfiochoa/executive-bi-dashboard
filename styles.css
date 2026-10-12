@@ -91,7 +91,8 @@ main { padding: 24px 32px 48px; display: flex; flex-direction: column; gap: 20px
 .kpis .kpi { grid-column: span 2; }
 .kpis .kpi:nth-child(n+4) { grid-column: span 3; }
 #overview { container-type: inline-size; }
-.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 16px 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; min-width: 0; animation: rise .45s ease both; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 16px 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.kpi.enter { animation: rise .45s ease both; }
 .kpi:nth-child(2){animation-delay:.04s}.kpi:nth-child(3){animation-delay:.08s}.kpi:nth-child(4){animation-delay:.12s}.kpi:nth-child(5){animation-delay:.16s}
 .kpi-l { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink2); }
 .kpi-v { white-space: nowrap; font-size: 28px; font-weight: 650; letter-spacing: -.02em; line-height: 1.15; }

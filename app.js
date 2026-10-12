@@ -164,6 +164,7 @@
   }
 
   /* ---------- widgets ---------- */
+  var kpiFirst = true;
   function renderKpis() {
     var cc = state.cat + 1, a = state.from, b = state.to, len = b - a + 1;
     var cur = sumRange(cube[cc], a, b), pa = Math.max(0, a - len), plen = a - pa, hasPrev = plen >= len * 0.9, prev = hasPrev ? sumRange(cube[cc], pa, a - 1) : null;
@@ -180,8 +181,9 @@
         var txt = (diff > 0 ? "+" : "") + diff.toFixed(1) + (d.rate ? " pts" : "%");
         dl = '<span class="delta ' + (flat ? "flat" : good ? "good" : "bad") + '"><span style="white-space:nowrap"><span aria-hidden="true">' + (flat ? "■" : diff > 0 ? "▲" : "▼") + "</span> " + txt + "</span> <small>vs previous " + plen + " days</small></span>";
       } else dl = '<span class="delta flat"><small>No earlier period to compare</small></span>';
-      return '<div class="kpi"><div class="kpi-l">' + d.l + '</div><div class="kpi-v">' + d.fmt(v) + "</div>" + dl + spark(bv.map(d.f), "var(--s1)") + "</div>";
+      return '<div class="kpi' + (kpiFirst ? " enter" : "") + '"><div class="kpi-l">' + d.l + '</div><div class="kpi-v">' + d.fmt(v) + "</div>" + dl + spark(bv.map(d.f), "var(--s1)") + "</div>";
     }).join("");
+    kpiFirst = false;
   }
 
   function renderRevenue() {
