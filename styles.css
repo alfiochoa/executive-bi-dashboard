@@ -137,9 +137,9 @@ td.name { white-space: normal; min-width: 180px; } td.name small { display: bloc
 .more { margin-top: 8px; }
 .empty { padding: 28px 8px; text-align: center; color: var(--ink2); }
 
-.cohort { border-collapse: separate; border-spacing: 2px; table-layout: fixed; font-size: 11px; font-variant-numeric: tabular-nums; width: 100%; min-width: 540px; }
+.cohort { border-collapse: separate; border-spacing: 2px; table-layout: fixed; font-size: 11px; font-variant-numeric: tabular-nums; width: 100%; min-width: 440px; }
 .cohort th { font-weight: 600; color: var(--ink2); padding: 2px 2px; text-align: center; white-space: nowrap; }
-.cohort th.rh { width: 58px; } .cohort th.bw { width: 42px; }
+.cohort th.rh { width: 52px; } .cohort th.bw { width: 40px; }
 .cohort th.rh { text-align: left; }
 .cohort td { text-align: center; padding: 5px 0; border-radius: 4px; min-width: 0; color: var(--ink); }
 .cohort td.hi { color: var(--on-hi); }
