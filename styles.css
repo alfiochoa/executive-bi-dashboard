@@ -87,11 +87,13 @@ main { padding: 24px 32px 48px; display: flex; flex-direction: column; gap: 20px
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .span2 { grid-column: 1 / -1; }
 
-.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+#overview { container-type: inline-size; }
+@container (min-width: 1100px) { .kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); } .kpi-v { font-size: 22px; } }
 .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 16px 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; min-width: 0; animation: rise .45s ease both; }
 .kpi:nth-child(2){animation-delay:.04s}.kpi:nth-child(3){animation-delay:.08s}.kpi:nth-child(4){animation-delay:.12s}.kpi:nth-child(5){animation-delay:.16s}
 .kpi-l { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink2); }
-.kpi-v { font-size: 28px; font-weight: 650; letter-spacing: -.02em; line-height: 1.15; }
+.kpi-v { white-space: nowrap; font-size: 28px; font-weight: 650; letter-spacing: -.02em; line-height: 1.15; }
 .delta { flex-wrap: wrap; font-size: 12.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; font-variant-numeric: tabular-nums; }
 .delta.good { color: var(--good); } .delta.bad { color: var(--bad); } .delta.flat { color: var(--ink2); }
 .delta small { font-weight: 400; color: var(--ink2); }
@@ -157,7 +159,6 @@ td.name { white-space: normal; min-width: 180px; } td.name small { display: bloc
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-@media (max-width: 1180px) { .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 900px) {
   .app { grid-template-columns: minmax(0, 1fr); }
   .side { position: static; height: auto; flex-direction: row; align-items: center; gap: 12px; padding: 10px 16px; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
