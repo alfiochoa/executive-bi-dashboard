@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: JS syntax
+        run: node --check app.js
+      - name: HTML lint
+        run: npx --yes htmlhint@1.1.4 index.html
+      - name: Snapshot sanity (figures match the assistant project)
+        run: python3 scripts/check_snapshot.py
