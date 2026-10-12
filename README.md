@@ -76,4 +76,3 @@ already collect.
 - Charts are drawn in plain SVG for control and small size; very large datasets
   would call for server-side aggregation.
 
-MIT-style demo; see repository for details.
